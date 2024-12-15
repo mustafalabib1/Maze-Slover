@@ -43,13 +43,13 @@ After downloading the project, run the following commands in your terminal (depe
 
 ### Linux or Mac
 ```
-cd Search-Algorithms-Visualizer/
+cd '.\Maze Solver Algorithms Visualizer\'
 python3 code/main.py
 ```
 
 ### Windows
 ```
-cd Search-Algorithms-Visualizer\
+cd '.\Maze Solver Algorithms Visualizer\'
 python code\main.py
 ```
 

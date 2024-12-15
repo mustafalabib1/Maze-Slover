@@ -26,7 +26,7 @@ There are two options for downloading this project to your computer:
 2. Open the terminal on that folder
 3. Run this command in the terminal:
 ```
-git clone https://github.com/MarianaS01/Search-Algorithms-Visualizer.git
+git clone https://github.com/mustafalabib1/Maze-Slover.git
 ```
 
 ### 2. Download the ZIP file

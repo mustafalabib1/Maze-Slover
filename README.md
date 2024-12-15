@@ -66,6 +66,8 @@ The program has a grid in which the selected algorithm will find the destination
 
 ### Demo video
 Here you have a video that shows the program in action.
-[assets/Screen Recording 2024-12-15 213958.mp4]
 
+https://user-images.githubusercontent.com/78234785/218279660-58483187-57f1-4252-90bc-e72e86201f7c.mp4 
 
+## **Future Work**
+The next goal for this project is to add more algorithms.

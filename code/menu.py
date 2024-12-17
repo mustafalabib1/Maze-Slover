@@ -20,11 +20,9 @@ class Square(object):
 
 class DescriptionBar(object):
     def __init__(self):
-        self.BFS = self.DLS=self.DFS = self.a_star = {
+        self.BFS = self.DLS=self.Dijkstra=self.DFS = self.a_star = {
             'To visit': ORANGE,
             'Visited': YELLOW,
-            'Add neighbour': KHAKI,
-            'Replace': PURPLE,
             'Path': GREEN
         }
 
@@ -36,6 +34,8 @@ class DescriptionBar(object):
             algorithm = self.DFS
         elif algorithm_name == 'DLS':
             algorithm = self.DLS
+        elif algorithm_name == 'Dijkstra':
+            algorithm = self.Dijkstra
         elif algorithm_name == 'A*':
             algorithm = self.a_star
         for phase in algorithm.keys():

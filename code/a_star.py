@@ -13,7 +13,7 @@ class AStar(SearchAlgorithms):
         Initialize the algorithm with the grid, window for visualization, and delay for animation.
         """
         super().__init__(grid, window, delay=delay)
-        self.to_visit = PriorityQueue() # Open list to keep track of cells to visit
+        self.to_visit = PriorityQueue() # Open Priority Queue to keep track of cells to visit
        
     def manhattan_distance(self, cell):
         d = abs(cell.row - self.grid.goal.row) + abs(cell.col - self.grid.goal.col)
@@ -32,10 +32,10 @@ class AStar(SearchAlgorithms):
             return "NO ORIGIN OR GOAL"
         
         current_cell = self.grid.origin  # Start at the origin cell
-        self.to_visit.put((0,current_cell))  # Add origin to to-visit PriorityQueue
+        self.to_visit.put((0,0,current_cell))  # Add origin to to-visit PriorityQueue
         
         while not self.to_visit.empty():  # While there are cells to visit
-            h, current_cell = self.to_visit.get()  
+            h,cost, current_cell = self.to_visit.get()  
             # Mark current cell as visited
             self.update_color_state(current_cell, self.VISITED)                
 
@@ -44,9 +44,10 @@ class AStar(SearchAlgorithms):
                 return
             else:
                 for cell in self.grid.neighbors(current_cell):  # append each neighbor
+                    NewCost=cost+1
                     cell.parent=current_cell
                     self.update_color_state(cell, self.TO_VISIT)
-                    self.to_visit.put((h+heuristic(cell),cell))
+                    self.to_visit.put((NewCost+heuristic(cell),NewCost,cell))
 
         return "PATH NOT FOUND"
             

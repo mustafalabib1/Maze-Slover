@@ -9,6 +9,7 @@ from menu import *
 from BreadthFirstAlgorithm import BreadthFirstAlgorithm
 from DepthFirstAlgorithm import DepthFirstAlgorithm
 from DepthLimitedSearch import DepthLimitedSearch
+from DijkstraAlgorithm import DijkstraAlgorithm
 from a_star import AStar
 
 
@@ -51,7 +52,7 @@ delete_path_button = Button((BUTTONS_POS_X, Y_SECOND_ROW+NEW_ROW), BUTTON_SIZE)
 delete_path_button.set_text("DELETE PATH", 15, BLACK)
 
 # Menu
-algorithms_list = ['DFS','BFS','DLS', 'A*']
+algorithms_list = ['DFS','BFS','DLS','Dijkstra', 'A*']
 heuristics_list = ['Manhattan distance', 'Euclidian distance', 'Chebyshev distance']
 
 select_algorithm_button = Button((BUTTONS_POS_X, Y_SECOND_ROW+2*NEW_ROW), BUTTON_SIZE)
@@ -149,6 +150,12 @@ while True:
                     heuristic = heu
                     draw_menu = False
                     draw_submenu = False
+            if algorithm != 'Dijkstra':
+                heu = sub_menu.get_algorithm()
+                if heu != None:
+                    heuristic = heu
+                    draw_menu = False
+                    draw_submenu = False
             else:
                 heuristic = None
 
@@ -169,6 +176,9 @@ while True:
                 elif algorithm == 'DLS':
                     DLS = DepthLimitedSearch(grid, window, delay)
                     message = DLS.search()
+                elif algorithm == 'Dijkstra':
+                    Dijkstra = DijkstraAlgorithm(grid, window, delay)
+                    message = Dijkstra.search()
                 elif algorithm == 'A*':
                     a_star = AStar(grid, window, delay)
                     if(heuristic=='Manhattan distance' ):

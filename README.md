@@ -26,13 +26,13 @@ There are two options for downloading this project to your computer:
 2. Open the terminal on that folder
 3. Run this command in the terminal:
 ```
-git clone https://github.com/MarianaS01/Search-Algorithms-Visualizer.git
+git clone https://github.com/mustafalabib1/Maze-Slover.git
 ```
 
 ### 2. Download the ZIP file
 You can download the ZIP file clicking the ```Download ZIP``` button as shown in the picture below.
 
-![Download ZIP](https://user-images.githubusercontent.com/78234785/224164211-8156a336-6c7b-446c-b802-efc164ae3ae8.png)
+- ![Download ZIP](assets/donwloadzip.png)
 
 
 After downloading, unzip the folder in your preferred directory.
@@ -43,13 +43,13 @@ After downloading the project, run the following commands in your terminal (depe
 
 ### Linux or Mac
 ```
-cd Search-Algorithms-Visualizer/
+cd '.\Maze Solver Algorithms Visualizer\'
 python3 code/main.py
 ```
 
 ### Windows
 ```
-cd Search-Algorithms-Visualizer\
+cd '.\Maze Solver Algorithms Visualizer\'
 python code\main.py
 ```
 
@@ -67,7 +67,4 @@ The program has a grid in which the selected algorithm will find the destination
 ### Demo video
 Here you have a video that shows the program in action.
 
-https://user-images.githubusercontent.com/78234785/218279660-58483187-57f1-4252-90bc-e72e86201f7c.mp4 
-
-## **Future Work**
-The next goal for this project is to add more algorithms.
+https://youtu.be/o9ZCs3sFAB4

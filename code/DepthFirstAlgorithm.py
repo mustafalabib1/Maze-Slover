@@ -44,7 +44,6 @@ class DepthFirstAlgorithm(SearchAlgorithms):
                 for cell in self.grid.neighbors(current_cell):  # append each neighbor
                     cell.parent=current_cell
                     self.to_visit.append(cell)
+                    self.update_color_state(cell, self.TO_VISIT)                        
                     
-                self.update_color_state(self.to_visit[-1], self.TO_VISIT)
-
         return "PATH NOT FOUND"

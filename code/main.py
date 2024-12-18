@@ -82,7 +82,7 @@ algorithm = None
 algo = None
 heuristic = None
 heu = None
-is_block_mode = False  # Flag to track block/unblock mode
+is_block_mode = True  # Flag to track block/unblock mode
 PrePos=(0,0)
 
 
@@ -204,8 +204,11 @@ while True:
     # Draw black blocks if mouse is pressed in block mode
     if is_block_mode and pygame.mouse.get_pressed()[0]:  # Left button held
         i,j = pygame.mouse.get_pos()
-        i,j=(i-15)//(CELL_WIDTH+CELLS_MARGIN),(j-15)//(CELL_HEIGHT+CELLS_MARGIN)
-        if(i>=0 and i<=19 and j>=0 and j<=14 and PrePos!=(i,j)):
+        print(i,j)
+        i,j=(i-MARGIN)//(CELL_WIDTH+CELLS_MARGIN),(j-MARGIN)//(CELL_HEIGHT+CELLS_MARGIN)
+        print(i,j)
+        print((0<=i<=NUM_CELLS_ROW-1 , 0<=j<=NUM_CELLS_COL-1 , PrePos!=(i,j)))
+        if 0<=i<=NUM_CELLS_ROW-1 and 0<=j<=NUM_CELLS_COL-1 and PrePos!=(i,j):
             grid.grid[i][j].change_color(BLACK)
             PrePos=(i,j)
 

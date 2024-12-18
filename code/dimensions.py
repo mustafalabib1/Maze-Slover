@@ -1,8 +1,8 @@
 # Dimensions of all resources needed
-NUM_CELLS_ROW       = 20 
-NUM_CELLS_COL       = 15
-CELL_WIDTH          = 40
-CELL_HEIGHT         = 40
+NUM_CELLS_ROW       = 40 
+NUM_CELLS_COL       = 30
+CELL_WIDTH          = 20
+CELL_HEIGHT         = 20
 CELL_DIMS           = (CELL_WIDTH, CELL_HEIGHT)
 CELLS_MARGIN        = 1 # margin between cells
 MARGIN              = 15

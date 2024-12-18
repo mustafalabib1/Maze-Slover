@@ -82,6 +82,9 @@ algorithm = None
 algo = None
 heuristic = None
 heu = None
+is_block_mode = False  # Flag to track block/unblock mode
+PrePos=(0,0)
+
 
 result_message = Text(RESMESSAGE_POS, BUTTON_SIZE)
 message = None
@@ -94,17 +97,17 @@ while True:
             exit()
 
         if event.type == pygame.MOUSEBUTTONDOWN:
-            # fill the cells
+            # Toggle block/unblock mode
             if block_unblock_button.check_click():
-                current_color = BLACK
+                is_block_mode = True  # Toggle the mode
 
             if set_origin_button.check_click():
                 current_color = BLUE
 
             if set_goal_button.check_click():
                 current_color = RED
-
-            grid.fill_grid(current_color)
+            if not is_block_mode:
+                grid.fill_grid(current_color)
             
             if low_speed_button.check_click():  
                 if delay < 150:
@@ -195,7 +198,13 @@ while True:
 
             if delete_path_button.check_click():
                 grid.delete_path()
-            
+    # Draw black blocks if mouse is pressed in block mode
+    if is_block_mode and pygame.mouse.get_pressed()[0]:  # Left button held
+        i,j = pygame.mouse.get_pos()
+        i,j=(i-15)//(CELL_WIDTH+CELLS_MARGIN),(j-15)//(CELL_HEIGHT+CELLS_MARGIN)
+        if(i>=0 and i<=19 and j>=0 and j<=14 and PrePos!=(i,j)):
+            grid.grid[i][j].change_color(BLACK)
+            PrePos=(i,j)
 
     window.fill(GREY)
     grid.draw_grid(window)

@@ -102,10 +102,13 @@ while True:
                 is_block_mode = True  # Toggle the mode
 
             if set_origin_button.check_click():
+                is_block_mode = False
                 current_color = BLUE
 
             if set_goal_button.check_click():
+                is_block_mode = False
                 current_color = RED
+                
             if not is_block_mode:
                 grid.fill_grid(current_color)
             

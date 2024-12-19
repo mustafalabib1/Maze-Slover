@@ -84,6 +84,8 @@ heuristic = None
 heu = None
 is_block_mode = True  # Flag to track block/unblock mode
 PrePos=(0,0)
+prepressed=False
+curpressed=False
 
 
 result_message = Text(RESMESSAGE_POS, BUTTON_SIZE)
@@ -202,15 +204,18 @@ while True:
             if delete_path_button.check_click():
                 grid.delete_path()
     # Draw black blocks if mouse is pressed in block mode
-    if is_block_mode and pygame.mouse.get_pressed()[0]:  # Left button held
+    curpressed=pygame.mouse.get_pressed()[0]
+    if is_block_mode and curpressed:  # Left button held
         i,j = pygame.mouse.get_pos()
-        print(i,j)
         i,j=(i-MARGIN)//(CELL_WIDTH+CELLS_MARGIN),(j-MARGIN)//(CELL_HEIGHT+CELLS_MARGIN)
-        print(i,j)
-        print((0<=i<=NUM_CELLS_ROW-1 , 0<=j<=NUM_CELLS_COL-1 , PrePos!=(i,j)))
-        if 0<=i<=NUM_CELLS_ROW-1 and 0<=j<=NUM_CELLS_COL-1 and PrePos!=(i,j):
-            grid.grid[i][j].change_color(BLACK)
-            PrePos=(i,j)
+        if 0<=i<=NUM_CELLS_ROW-1 and 0<=j<=NUM_CELLS_COL-1:
+            if PrePos!=(i,j):
+                grid.grid[i][j].change_color(BLACK)
+                PrePos=(i,j)
+            elif curpressed!=prepressed:
+                grid.fill_grid(current_color)
+    prepressed=curpressed
+                
 
     window.fill(GREY)
     grid.draw_grid(window)

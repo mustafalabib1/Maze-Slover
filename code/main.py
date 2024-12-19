@@ -102,6 +102,7 @@ while True:
             # Toggle block/unblock mode
             if block_unblock_button.check_click():
                 is_block_mode = True  # Toggle the mode
+                current_color=BLACK
 
             if set_origin_button.check_click():
                 is_block_mode = False
@@ -140,25 +141,7 @@ while True:
                 if algo != a_star_button.get_text():
                     draw_menu = False
 
-            if algorithm != 'BFS':
-                heu = sub_menu.get_algorithm()
-                if heu != None:
-                    heuristic = heu
-                    draw_menu = False
-                    draw_submenu = False
-            if algorithm != 'DFS':
-                heu = sub_menu.get_algorithm()
-                if heu != None:
-                    heuristic = heu
-                    draw_menu = False
-                    draw_submenu = False
-            if algorithm != 'DLS':
-                heu = sub_menu.get_algorithm()
-                if heu != None:
-                    heuristic = heu
-                    draw_menu = False
-                    draw_submenu = False
-            if algorithm != 'Dijkstra':
+            if algorithm == 'A*':
                 heu = sub_menu.get_algorithm()
                 if heu != None:
                     heuristic = heu

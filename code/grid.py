@@ -69,6 +69,7 @@ class Grid(object):
                         cell.change_color(current_color)
                         
                     self.origin = cell
+                    self.origin.parent=None
                 
                 elif current_color == RED:
                     if self.goal == None:

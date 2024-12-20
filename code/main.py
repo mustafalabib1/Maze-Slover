@@ -154,9 +154,10 @@ while True:
                 message = None     
 
             if start_button.check_click():
-                grid.delete_path()
-                grid.draw_grid(window)
-                pygame.display.update()
+                if grid.goal !=None and grid.origin!=None:
+                    grid.delete_path()
+                    grid.draw_grid(window)
+                    pygame.display.update()
                 
                 if algorithm == 'BFS':
                     BFS = BreadthFirstAlgorithm(grid, window, delay)

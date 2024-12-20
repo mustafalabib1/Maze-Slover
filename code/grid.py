@@ -37,6 +37,7 @@ class Grid(object):
         self.linear_grid = [] # to reference easily in one dimension
         self.origin = None
         self.goal = None
+        self.delay=100
 
         for i in range(num_rows):
             rows = []

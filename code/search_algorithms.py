@@ -2,9 +2,8 @@ import pygame
 from grid import *
 
 class SearchAlgorithms(object):
-    def __init__(self, grid, window, delay=10):
+    def __init__(self, grid, window):
         self.grid = grid
-        self.delay = delay
         self.window = window
 
     def update_color_state(self, cell, color):
@@ -16,7 +15,7 @@ class SearchAlgorithms(object):
             pygame.draw.rect(self.window, RED, cell.rect, 5)
 
         pygame.display.update(cell.rect)
-        pygame.time.delay(self.delay)  
+        pygame.time.delay(self.grid.delay)  
 
     def get_path(self): 
         path = []

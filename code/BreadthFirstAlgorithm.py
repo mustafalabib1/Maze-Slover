@@ -14,11 +14,11 @@ class BreadthFirstAlgorithm(SearchAlgorithms):
     TO_VISIT = ORANGE
     VISITED = YELLOW
     
-    def __init__(self, grid, window, delay=10):
+    def __init__(self, grid, window):
         """
         Initialize the algorithm with the grid, window for visualization, and delay for animation.
         """
-        super().__init__(grid, window, delay=delay)
+        super().__init__(grid, window )
         self.to_visit = []  # Open list to keep track of cells to visit
 
     def search(self): 

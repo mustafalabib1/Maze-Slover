@@ -20,7 +20,7 @@ class AStar(SearchAlgorithms):
         return d
 
     def euclidian_distance(self, cell):
-        d = int(sqrt(abs(cell.row - self.grid.goal.row)**2 + abs(cell.col - self.grid.goal.col)**2))
+        d = (sqrt(abs(cell.row - self.grid.goal.row)**2 + abs(cell.col - self.grid.goal.col)**2))
         return d
 
     def chebyshev_distance(self, cell):
